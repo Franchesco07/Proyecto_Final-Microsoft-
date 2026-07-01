@@ -18,7 +18,7 @@
         </field>
     </record>
 
-    <record id="view_microsoft_subscription_form" model="ir.ui.view">
+   <record id="view_microsoft_subscription_form" model="ir.ui.view">
         <field name="name">microsoft.subscription.form</field>
         <field name="model">microsoft.subscription</field>
         <field name="arch" type="xml">
@@ -33,6 +33,9 @@
                         </h1>
                     </div>
                     <group>
+                        <group string="Información del Cliente">
+                            <field name="partner_id"/>
+                        </group>
                         <group string="Detalle del Producto">
                             <field name="product_id"/>
                             <field name="quantity"/> 

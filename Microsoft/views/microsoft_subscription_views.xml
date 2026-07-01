@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_microsoft_subscription_tree" model="ir.ui.view">
+        <field name="name">microsoft.subscription.list</field>
+        <field name="model">microsoft.subscription</field>
+        <field name="arch" type="xml">
+            <list string="Suscripciones Microsoft">
+                <field name="name"/>
+                <field name="partner_id"/>
+                <field name="product_id"/>
+                <field name="quantity"/>
+                <field name="current_consumption" sum="Total Consumo Azure"/>
+                <field name="state" widget="badge" 
+                       decoration-success="state == 'active'" 
+                       decoration-info="state == 'draft'" 
+                       decoration-danger="state == 'suspended'"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_microsoft_subscription_form" model="ir.ui.view">
+        <field name="name">microsoft.subscription.form</field>
+        <field name="model">microsoft.subscription</field>
+        <field name="arch" type="xml">
+            <form string="Suscripción Microsoft">
+                <header>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,active,suspended"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Detalle del Producto">
+                            <field name="product_id"/>
+                            <field name="quantity"/> 
+                            <field name="current_consumption"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_microsoft_subscription" model="ir.actions.act_window">
+        <field name="name">Suscripciones Microsoft</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">microsoft.subscription</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Crea tu primera suscripción de tecnología Microsoft
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_microsoft_csp_root" 
+              name="Microsoft CSP" 
+              sequence="10" 
+              web_icon="base,static/description/icon.png"/>
+
+    <menuitem id="menu_microsoft_csp_operations" 
+              name="Operaciones" 
+              parent="menu_microsoft_csp_root" 
+              sequence="10"/>
+
+    <menuitem id="menu_microsoft_subscription" 
+              name="Suscripciones de Clientes" 
+              parent="menu_microsoft_csp_operations"
+              action="action_microsoft_subscription"
+              sequence="10"/>
+</odoo>

@@ -1,0 +1,94 @@
+<odoo>
+    <!-- ========================================================
+         1. VISTA DE LISTA (TREE / LIST VIEW)
+         ======================================================== -->
+    <record id="view_microsoft_certification_list" model="ir.ui.view">
+        <field name="name">microsoft.certification.list</field>
+        <field name="model">microsoft.certification</field>
+        <field name="arch"  type="xml">
+            <list decoration-success="status == 'passed'" 
+                  decoration-danger="status == 'failed'" 
+                  decoration-muted="status == 'expired'"
+                  decoration-info="status == 'registered'">
+                <field name="display_name"/>
+                <field name="employee_id"/>
+                <field name="exam_date"/>
+                <field name="score" string="Puntaje Obtenido"/>
+                <field name="status" widget="badge"
+                       decoration-info="status == 'registered'"
+                       decoration-success="status == 'passed'"
+                       decoration-danger="status == 'failed'"
+                       decoration-muted="status == 'expired'"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- ========================================================
+         2. VISTA DE FORMULARIO (FORM VIEW)
+         ======================================================== -->
+    <record id="view_microsoft_certification_form" model="ir.ui.view">
+        <field name="name">microsoft.certification.form</field>
+        <field name="model">microsoft.certification</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="status" widget="statusbar" statusbar_visible="registered,passed,failed" options="{'clickable': '1'}"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="certification_code" class="oe_edit_only" string="Examen de Certificación"/>
+                        <div class="d-flex" style="gap: 15px;">
+                            <h1>
+                                <field name="certification_code" placeholder="Ej: AZ-900" style="width: 140px; margin-right: 10px;"/>
+                            </h1>
+                            <h1>
+                                <field name="name" placeholder="Ej: Azure Fundamentals" style="flex-grow: 1;"/>
+                            </h1>
+                        </div>
+                    </div>
+                    <group>
+                        <group string="Información del Candidato">
+                            <field name="employee_id" options="{'no_create': True}"/>
+                            <field name="exam_date"/>
+                        </group>
+                        <group string="Control de Voucher y Calificación">
+                            <field name="voucher_code" placeholder="Ej: MSFT-XXXX-XXXX"/>
+                            <field name="score"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ========================================================
+         3. ACCIÓN DE VENTANA (WINDOW ACTION)
+         ======================================================== -->
+    <record id="action_microsoft_certification" model="ir.actions.act_window">
+        <field name="name">Certificaciones Académicas</field>
+        <field name="res_model">microsoft.certification</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Registra la primera certificación o examen programado
+            </p>
+            <p>
+                Lleva el control de los exámenes agendados por los empleados, asienta las calificaciones oficiales y gestiona los códigos de vouchers de descuento.
+            </p>
+        </field>
+    </record>
+
+    <!-- ========================================================
+         4. MENÚS
+         ======================================================== -->
+    <menuitem id="menu_microsoft_academy_category" 
+              name="Academia" 
+              parent="microsoft_suite.menu_microsoft_suite_root" 
+              sequence="30"/>
+
+    <menuitem id="menu_microsoft_certification_action" 
+              name="Control de Exámenes" 
+              parent="menu_microsoft_academy_category" 
+              action="action_microsoft_certification" 
+              sequence="10"/>
+</odoo>

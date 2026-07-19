@@ -1,0 +1,35 @@
+<odoo>
+    <!-- 1. Categoría de la Aplicación en la vista de configuración de usuarios -->
+    <record id="module_category_microsoft_suite" model="ir.module.category">
+        <field name="name">Suite Corporativa Microsoft</field>
+        <field name="description">Control de permisos para los submódulos de Licencias, Hardware Surface y Academia.</field>
+        <field name="sequence">10</field>
+    </record>
+
+    <!-- 2. Rol: Usuario Final / Alumno (Nivel Básico) -->
+    <record id="group_microsoft_user" model="res.groups">
+        <field name="name">Usuario Final / Alumno</field>
+        <field name="category_id" ref="module_category_microsoft_suite"/>
+        <field name="comment">Acceso básico para ver licencias propias asignadas e historial académico personal.</field>
+        <!-- Hereda permisos del usuario interno básico de Odoo -->
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <!-- 3. Rol: Soporte Técnico (Nivel Medio) -->
+    <record id="group_microsoft_support" model="res.groups">
+        <field name="name">Soporte Técnico (Hardware)</field>
+        <field name="category_id" ref="module_category_microsoft_suite"/>
+        <field name="comment">Permiso para dar de alta equipos Surface, gestionar garantías y tickets de soporte.</field>
+        <field name="implied_ids" eval="[(4, ref('group_microsoft_user'))]"/>
+    </record>
+
+    <!-- 4. Rol: Administrador TI (Nivel Alto - Control Total) -->
+    <record id="group_microsoft_admin" model="res.groups">
+        <field name="name">Administrador TI</field>
+        <field name="category_id" ref="module_category_microsoft_suite"/>
+        <field name="comment">Acceso absoluto a la administración de licencias, auditoría y asignación de presupuesto académico.</field>
+        <field name="implied_ids" eval="[(4, ref('group_microsoft_support'))]"/>
+        <!-- Asociamos al administrador general del sistema por defecto -->
+        <field name="users" eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"/>
+    </record>
+</odoo>

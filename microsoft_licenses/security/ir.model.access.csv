@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_microsoft_license_user,Access License User,model_microsoft_license,microsoft_suite.group_microsoft_user,1,0,0,0
+access_microsoft_license_support,Access License Support,model_microsoft_license,microsoft_suite.group_microsoft_support,1,1,1,0
+access_microsoft_license_admin,Access License Admin,model_microsoft_license,microsoft_suite.group_microsoft_admin,1,1,1,1

@@ -20,6 +20,7 @@ IVA fijo del 15% calculado en Python, sin modulo de contabilidad.
         'views/ms_demo_producto_views.xml',
         'views/ms_venta_views.xml',
         'views/menus.xml',
+        'data/ms_datos_iniciales.xml',
     ],
     'application': True,
     'installable': True,

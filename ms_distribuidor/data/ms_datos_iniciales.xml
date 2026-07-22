@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- noupdate="1": los registros se crean una sola vez. Puedes editarlos o
+         borrarlos y Odoo no los repondra en la siguiente actualizacion. -->
+    <data noupdate="1">
+
+        <!-- ============ VENDEDORES ============ -->
+        <record id="vendedor_ana" model="ms.vendedor">
+            <field name="name">Ana Cordova</field>
+            <field name="puesto">Asesor de ventas</field>
+            <field name="correo">ana.cordova@msstore.ec</field>
+            <field name="telefono">0991234567</field>
+        </record>
+
+        <record id="vendedor_luis" model="ms.vendedor">
+            <field name="name">Luis Paredes</field>
+            <field name="puesto">Especialista en Surface</field>
+            <field name="correo">luis.paredes@msstore.ec</field>
+            <field name="telefono">0987654321</field>
+        </record>
+
+        <record id="vendedor_maria" model="ms.vendedor">
+            <field name="name">Maria Yepez</field>
+            <field name="puesto">Jefe de tienda</field>
+            <field name="correo">maria.yepez@msstore.ec</field>
+            <field name="telefono">0999887766</field>
+        </record>
+
+        <!-- ============ CLIENTES ============ -->
+        <record id="cliente_carlos" model="ms.cliente">
+            <field name="name">Carlos Mendoza</field>
+            <field name="tipo_identificacion">cedula</field>
+            <field name="identificacion">0102030405</field>
+            <field name="telefono">0961112233</field>
+            <field name="email">carlos.mendoza@gmail.com</field>
+            <field name="direccion">Av. Amazonas N34-120 y Republica</field>
+            <field name="ciudad">Quito</field>
+        </record>
+
+        <record id="cliente_tecnoaustro" model="ms.cliente">
+            <field name="name">TecnoAustro Cia. Ltda.</field>
+            <field name="tipo_identificacion">ruc</field>
+            <field name="identificacion">0190123456001</field>
+            <field name="telefono">072834567</field>
+            <field name="email">compras@tecnoaustro.com.ec</field>
+            <field name="direccion">Av. Solano 5-32</field>
+            <field name="ciudad">Cuenca</field>
+        </record>
+
+        <record id="cliente_sofia" model="ms.cliente">
+            <field name="name">Sofia Vera</field>
+            <field name="tipo_identificacion">cedula</field>
+            <field name="identificacion">0923456789</field>
+            <field name="telefono">0954443322</field>
+            <field name="email">sofia.vera@outlook.com</field>
+            <field name="direccion">Urdesa Central, Av. Victor Emilio Estrada 512</field>
+            <field name="ciudad">Guayaquil</field>
+        </record>
+
+        <record id="cliente_jonathan" model="ms.cliente">
+            <field name="name">Jonathan Salazar</field>
+            <field name="tipo_identificacion">pasaporte</field>
+            <field name="identificacion">AB1234567</field>
+            <field name="telefono">0978889900</field>
+            <field name="email">jsalazar@protonmail.com</field>
+            <field name="direccion">Cdla. Los Alamos, Mz 7 Villa 3</field>
+            <field name="ciudad">Manta</field>
+        </record>
+
+        <!-- ============ PRODUCTOS ============ -->
+        <!-- precio_base sin IVA; iva_valor y precio_final los calcula Python -->
+        <record id="producto_surface_pro9" model="ms.producto">
+            <field name="name">Surface Pro 9</field>
+            <field name="linea">surface</field>
+            <field name="categoria">dispositivo</field>
+            <field name="version_edicion">16GB/512GB</field>
+            <field name="anio_lanzamiento">2022</field>
+            <field name="color">Platino</field>
+            <field name="especificaciones">Intel Core i7-1255U, 16GB RAM LPDDR5, SSD 512GB, pantalla PixelSense 13" 120Hz</field>
+            <field name="tipo_licencia">no_aplica</field>
+            <field name="precio_base">1599.00</field>
+            <field name="estado">disponible</field>
+        </record>
+
+        <record id="producto_surface_laptop5" model="ms.producto">
+            <field name="name">Surface Laptop 5</field>
+            <field name="linea">surface</field>
+            <field name="categoria">dispositivo</field>
+            <field name="version_edicion">8GB/256GB</field>
+            <field name="anio_lanzamiento">2022</field>
+            <field name="color">Negro mate</field>
+            <field name="especificaciones">Intel Core i5-1235U, 8GB RAM, SSD 256GB, pantalla tactil 13.5"</field>
+            <field name="tipo_licencia">no_aplica</field>
+            <field name="precio_base">1099.00</field>
+            <field name="estado">disponible</field>
+        </record>
+
+        <record id="producto_xbox_series_x" model="ms.producto">
+            <field name="name">Xbox Series X</field>
+            <field name="linea">xbox</field>
+            <field name="categoria">consola</field>
+            <field name="version_edicion">1TB</field>
+            <field name="anio_lanzamiento">2020</field>
+            <field name="color">Negro</field>
+            <field name="especificaciones">AMD Zen 2 8 nucleos, 16GB GDDR6, SSD NVMe 1TB, 4K a 120 FPS</field>
+            <field name="tipo_licencia">no_aplica</field>
+            <field name="precio_base">549.00</field>
+            <field name="estado">disponible</field>
+        </record>
+
+        <record id="producto_xbox_series_s" model="ms.producto">
+            <field name="name">Xbox Series S</field>
+            <field name="linea">xbox</field>
+            <field name="categoria">consola</field>
+            <field name="version_edicion">512GB Digital</field>
+            <field name="anio_lanzamiento">2020</field>
+            <field name="color">Blanco</field>
+            <field name="especificaciones">AMD Zen 2 8 nucleos, 10GB GDDR6, SSD 512GB, 1440p a 120 FPS</field>
+            <field name="tipo_licencia">no_aplica</field>
+            <field name="precio_base">329.00</field>
+            <field name="estado">reservado</field>
+        </record>
+
+        <record id="producto_windows11_pro" model="ms.producto">
+            <field name="name">Windows 11 Pro</field>
+            <field name="linea">windows</field>
+            <field name="categoria">software</field>
+            <field name="version_edicion">Pro</field>
+            <field name="anio_lanzamiento">2021</field>
+            <field name="especificaciones">Licencia digital OEM, activacion por cuenta Microsoft, 64 bits</field>
+            <field name="tipo_licencia">perpetua</field>
+            <field name="precio_base">199.00</field>
+            <field name="estado">disponible</field>
+        </record>
+
+        <record id="producto_office_365" model="ms.producto">
+            <field name="name">Microsoft 365 Personal</field>
+            <field name="linea">office</field>
+            <field name="categoria">software</field>
+            <field name="version_edicion">Personal - 1 anio</field>
+            <field name="anio_lanzamiento">2024</field>
+            <field name="especificaciones">Word, Excel, PowerPoint, Outlook y 1TB de OneDrive para 1 usuario</field>
+            <field name="tipo_licencia">suscripcion</field>
+            <field name="precio_base">69.00</field>
+            <field name="estado">disponible</field>
+        </record>
+
+        <record id="producto_office_2021" model="ms.producto">
+            <field name="name">Office Hogar y Estudiantes 2021</field>
+            <field name="linea">office</field>
+            <field name="categoria">software</field>
+            <field name="version_edicion">Home</field>
+            <field name="anio_lanzamiento">2021</field>
+            <field name="especificaciones">Word, Excel y PowerPoint, licencia para un solo equipo</field>
+            <field name="tipo_licencia">perpetua</field>
+            <field name="precio_base">149.00</field>
+            <field name="estado">disponible</field>
+        </record>
+
+        <record id="producto_teclado_surface" model="ms.producto">
+            <field name="name">Surface Pro Signature Keyboard</field>
+            <field name="linea">accesorio</field>
+            <field name="categoria">accesorio</field>
+            <field name="version_edicion">Con Slim Pen 2</field>
+            <field name="anio_lanzamiento">2022</field>
+            <field name="color">Zafiro</field>
+            <field name="especificaciones">Teclado Alcantara retroiluminado con trackpad y compartimiento para Slim Pen 2</field>
+            <field name="tipo_licencia">no_aplica</field>
+            <field name="precio_base">179.00</field>
+            <field name="estado">disponible</field>
+        </record>
+
+        <record id="producto_control_xbox" model="ms.producto">
+            <field name="name">Control Inalambrico Xbox</field>
+            <field name="linea">accesorio</field>
+            <field name="categoria">accesorio</field>
+            <field name="version_edicion">Carbon Black</field>
+            <field name="anio_lanzamiento">2023</field>
+            <field name="color">Negro</field>
+            <field name="especificaciones">Bluetooth y Xbox Wireless, cruceta hibrida, puerto USB-C</field>
+            <field name="tipo_licencia">no_aplica</field>
+            <field name="precio_base">64.00</field>
+            <field name="estado">agotado</field>
+        </record>
+
+        <!-- ============ DEMOS DE PRODUCTO ============ -->
+        <record id="demo_surface_carlos" model="ms.demo_producto">
+            <field name="name">DEMO/0001</field>
+            <field name="cliente_id" ref="cliente_carlos"/>
+            <field name="producto_id" ref="producto_surface_pro9"/>
+            <field name="vendedor_id" ref="vendedor_luis"/>
+            <field name="duracion_horas">1.0</field>
+            <field name="notas">El cliente quiere comparar el rendimiento con su portatil actual antes de decidir.</field>
+            <field name="estado">realizada</field>
+        </record>
+
+        <record id="demo_xbox_sofia" model="ms.demo_producto">
+            <field name="name">DEMO/0002</field>
+            <field name="cliente_id" ref="cliente_sofia"/>
+            <field name="producto_id" ref="producto_xbox_series_x"/>
+            <field name="vendedor_id" ref="vendedor_ana"/>
+            <field name="duracion_horas">0.5</field>
+            <field name="notas">Prueba de Game Pass en la consola de exhibicion.</field>
+            <field name="estado">confirmada</field>
+        </record>
+
+        <record id="demo_laptop_tecnoaustro" model="ms.demo_producto">
+            <field name="name">DEMO/0003</field>
+            <field name="cliente_id" ref="cliente_tecnoaustro"/>
+            <field name="producto_id" ref="producto_surface_laptop5"/>
+            <field name="vendedor_id" ref="vendedor_maria"/>
+            <field name="duracion_horas">2.0</field>
+            <field name="notas">Evaluacion para compra corporativa de 15 equipos.</field>
+            <field name="estado">borrador</field>
+        </record>
+
+        <!-- ============ VENTAS ============ -->
+        <!-- name se deja explicito para no consumir la secuencia con datos de ejemplo.
+             Las ventas que crees desde la interfaz seguiran con VENTA/0001. -->
+        <record id="venta_0001" model="ms.venta">
+            <field name="name">VENTA/DEMO/01</field>
+            <field name="cliente_id" ref="cliente_carlos"/>
+            <field name="producto_id" ref="producto_surface_pro9"/>
+            <field name="vendedor_id" ref="vendedor_luis"/>
+            <field name="fecha" eval="(DateTime.today() - relativedelta(months=3)).strftime('%Y-%m-%d')"/>
+            <field name="estado">facturada</field>
+        </record>
+
+        <record id="venta_0002" model="ms.venta">
+            <field name="name">VENTA/DEMO/02</field>
+            <field name="cliente_id" ref="cliente_sofia"/>
+            <field name="producto_id" ref="producto_xbox_series_x"/>
+            <field name="vendedor_id" ref="vendedor_ana"/>
+            <field name="fecha" eval="(DateTime.today() - relativedelta(months=2)).strftime('%Y-%m-%d')"/>
+            <field name="estado">facturada</field>
+        </record>
+
+        <record id="venta_0003" model="ms.venta">
+            <field name="name">VENTA/DEMO/03</field>
+            <field name="cliente_id" ref="cliente_tecnoaustro"/>
+            <field name="producto_id" ref="producto_surface_laptop5"/>
+            <field name="vendedor_id" ref="vendedor_maria"/>
+            <field name="fecha" eval="(DateTime.today() - relativedelta(months=2)).strftime('%Y-%m-%d')"/>
+            <field name="estado">facturada</field>
+        </record>
+
+        <record id="venta_0004" model="ms.venta">
+            <field name="name">VENTA/DEMO/04</field>
+            <field name="cliente_id" ref="cliente_jonathan"/>
+            <field name="producto_id" ref="producto_office_365"/>
+            <field name="vendedor_id" ref="vendedor_ana"/>
+            <field name="fecha" eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d')"/>
+            <field name="estado">facturada</field>
+        </record>
+
+        <record id="venta_0005" model="ms.venta">
+            <field name="name">VENTA/DEMO/05</field>
+            <field name="cliente_id" ref="cliente_carlos"/>
+            <field name="producto_id" ref="producto_teclado_surface"/>
+            <field name="vendedor_id" ref="vendedor_luis"/>
+            <field name="fecha" eval="(DateTime.today() - relativedelta(months=1)).strftime('%Y-%m-%d')"/>
+            <field name="estado">confirmada</field>
+        </record>
+
+        <record id="venta_0006" model="ms.venta">
+            <field name="name">VENTA/DEMO/06</field>
+            <field name="cliente_id" ref="cliente_sofia"/>
+            <field name="producto_id" ref="producto_windows11_pro"/>
+            <field name="vendedor_id" ref="vendedor_maria"/>
+            <field name="fecha" eval="DateTime.today().strftime('%Y-%m-%d')"/>
+            <field name="estado">confirmada</field>
+        </record>
+
+        <record id="venta_0007" model="ms.venta">
+            <field name="name">VENTA/DEMO/07</field>
+            <field name="cliente_id" ref="cliente_jonathan"/>
+            <field name="producto_id" ref="producto_xbox_series_s"/>
+            <field name="vendedor_id" ref="vendedor_ana"/>
+            <field name="fecha" eval="DateTime.today().strftime('%Y-%m-%d')"/>
+            <field name="estado">cotizacion</field>
+        </record>
+
+        <record id="venta_0008" model="ms.venta">
+            <field name="name">VENTA/DEMO/08</field>
+            <field name="cliente_id" ref="cliente_tecnoaustro"/>
+            <field name="producto_id" ref="producto_office_2021"/>
+            <field name="vendedor_id" ref="vendedor_luis"/>
+            <field name="fecha" eval="DateTime.today().strftime('%Y-%m-%d')"/>
+            <field name="estado">cotizacion</field>
+        </record>
+
+    </data>
+</odoo>

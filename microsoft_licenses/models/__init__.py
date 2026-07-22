@@ -1,1 +1,0 @@
-from . import microsoft_licenses

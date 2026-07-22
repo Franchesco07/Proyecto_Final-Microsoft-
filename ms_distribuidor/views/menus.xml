@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem id="menu_ms_root"
+              name="Microsoft Store"
+              sequence="10"/>
+
+    <menuitem id="menu_ms_producto"
+              name="Productos"
+              parent="menu_ms_root"
+              action="action_ms_producto"
+              sequence="10"/>
+
+    <menuitem id="menu_ms_cliente"
+              name="Clientes"
+              parent="menu_ms_root"
+              action="action_ms_cliente"
+              sequence="20"/>
+
+    <menuitem id="menu_ms_venta"
+              name="Ventas"
+              parent="menu_ms_root"
+              action="action_ms_venta"
+              sequence="30"/>
+
+    <menuitem id="menu_ms_demo_producto"
+              name="Demos de producto"
+              parent="menu_ms_root"
+              action="action_ms_demo_producto"
+              sequence="40"/>
+
+    <menuitem id="menu_ms_vendedor"
+              name="Vendedores"
+              parent="menu_ms_root"
+              action="action_ms_vendedor"
+              sequence="50"/>
+
+    <menuitem id="menu_ms_tablero"
+              name="Tablero"
+              parent="menu_ms_root"
+              sequence="60"/>
+
+    <menuitem id="menu_ms_venta_analisis"
+              name="Analisis de ventas"
+              parent="menu_ms_tablero"
+              action="action_ms_venta_analisis"
+              sequence="10"/>
+
+</odoo>

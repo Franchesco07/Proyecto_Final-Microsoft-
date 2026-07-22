@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_ms_producto,ms.producto.access,model_ms_producto,base.group_user,1,1,1,1
+access_ms_cliente,ms.cliente.access,model_ms_cliente,base.group_user,1,1,1,1
+access_ms_vendedor,ms.vendedor.access,model_ms_vendedor,base.group_user,1,1,1,1
+access_ms_demo_producto,ms.demo.producto.access,model_ms_demo_producto,base.group_user,1,1,1,1
+access_ms_venta,ms.venta.access,model_ms_venta,base.group_user,1,1,1,1
